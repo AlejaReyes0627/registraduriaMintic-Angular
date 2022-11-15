@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SeguridadRoutingModule } from './seguridad-routing.module';
 import { LoginComponent } from './login/login.component';
+import { NbCardModule } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule,
-    SeguridadRoutingModule
+    SeguridadRoutingModule,
+    NbCardModule,
+    FormsModule
   ]
 })
 export class SeguridadModule { }
