@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
-
+//listar y crear
 const routes: Routes = [
   {
     path: 'listar',
