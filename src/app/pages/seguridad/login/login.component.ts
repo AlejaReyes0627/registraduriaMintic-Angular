@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login(): void {
-    console.log("aqui" + this.correo + " contraseña " + this.contrasena);
+    console.log(this.correo + "     "+this.contrasena);
     let elUsuario: Usuario = {
       correo: this.correo,
       contrasena: this.contrasena,
