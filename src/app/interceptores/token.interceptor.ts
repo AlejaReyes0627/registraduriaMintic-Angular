@@ -14,26 +14,19 @@ import { catchError } from "rxjs/operators";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(
-    public miServicioSeguridad: SeguridadService,
-    private router: Router
-  ) {}
-  intercept(
-    request: HttpRequest<unknown>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  constructor(public miServicioSeguridad: SeguridadService, private router: Router) { }
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this.miServicioSeguridad.usuarioSesionActiva) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer
-${this.miServicioSeguridad.usuarioSesionActiva.token}`,
-        },
+          Authorization: `Bearer ${this.miServicioSeguridad.usuarioSesionActiva.token}`
+        }
       });
     }
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
-          this.router.navigateByUrl("/pages/dashboard");
+          this.router.navigateByUrl('/pages/dashboard');
         }
         return throwError(err);
       })

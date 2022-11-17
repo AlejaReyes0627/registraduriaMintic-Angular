@@ -4,11 +4,12 @@ import { Router } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { Usuario } from "../modelos/usuario.model";
+
 @Injectable({
   providedIn: "root",
 })
 export class SeguridadService {
-  elUsuario = new BehaviorSubject<Usuario>(new Usuario());
+  elUsuario = new BehaviorSubject<Usuario>(new Usuario);
   constructor(private http: HttpClient, private router: Router) {
     this.verificarSesionActual();
   }
@@ -43,7 +44,7 @@ export class SeguridadService {
    * @returns Respuesta HTTP la cual indica si el usuario tiene permiso de acceso
    */
   login(infoUsuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>("http://127.0.0.1:7777/login", infoUsuario);
+    return this.http.post<Usuario>(`http://127.0.0.1:7777/login`, infoUsuario);
   }
   /**
    * Guarda los datos tales como el identificador
