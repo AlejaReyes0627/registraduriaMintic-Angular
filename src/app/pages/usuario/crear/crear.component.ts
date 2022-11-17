@@ -48,7 +48,7 @@ export class CrearComponent implements OnInit {
           "El Usuario ha sido creado correctamente",
           "success"
         );
-        this.router.navigate(["pages/Usuarios/listar"]);
+        this.router.navigate(["pages/usuario/listar"]);
       });
     }
   }
@@ -62,7 +62,7 @@ export class CrearComponent implements OnInit {
             "El Usuario ha sido actualizado correctamente",
             "success"
           );
-          this.router.navigate(["pages/Usuarios/listar"]);
+          this.router.navigate(["pages/usuario/listar"]);
         });
     }
   }

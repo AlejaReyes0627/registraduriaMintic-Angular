@@ -9,33 +9,32 @@
     <nb-card-body>
       <div class="row">
         <div class="col-3">
+          <label>correo</label>
+        </div>
+        <div class="col-9">
+          <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elUsuario.correo">
+          <p *ngIf="intentoEnvio && elUsuario.correo==''">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <label>contraseña</label>
+        </div>
+        <div class="col-9">
+          <input class="form-control" type="text" [(ngModel)]="elUsuario.contrasena">
+          <p *ngIf="intentoEnvio && elUsuario.contrasena==''
+">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
           <label>pseudonimo</label>
         </div>
         <div class="col-9">
-          <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elUsuario.cedula">
-          <p *ngIf="intentoEnvio && elUsuario.cedula==''
-">Requerido</p>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-3">
-          <label>Nombre</label>
-        </div>
-        <div class="col-9">
-          <input class="form-control" type="text" [(ngModel)]="elUsuario.nombre">
-          <p *ngIf="intentoEnvio && elUsuario.nombre==''
-">Requerido</p>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-3">
-          <label>Apellido</label>
-        </div>
-        <div class="col-9">
-          <input class="form-control" type="text" [(ngModel)]="elUsuario.apellido">
-          <p *ngIf="intentoEnvio && elUsuario.apellido==''
+          <input class="form-control" type="text" [(ngModel)]="elUsuario.pseudonimo">
+          <p *ngIf="intentoEnvio && elUsuario.pseudonimo==''
 ">Requerido</p>
         </div>
       </div>

@@ -25,12 +25,13 @@ export class LoginComponent implements OnInit {
       correo: this.correo,
       contrasena: this.contrasena,
     };
-    this.miServicioSeguridad.login(elUsuario).subscribe(
-      (data) => {
+    console.log(elUsuario)
+    this.miServicioSeguridad.login(elUsuario).subscribe((data) => {
         this.router.navigate(["pages/dashboard"]);
         this.miServicioSeguridad.guardarDatosSesion(data);
       },
       (error) => {
+        console.log(error)
         Swal.fire({
           title: "Error Login",
           text: error["error"]["message"],
