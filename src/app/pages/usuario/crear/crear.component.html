@@ -1,1 +1,57 @@
-<p>crear works!</p>
+<div class="col-lg-12">
+  <nb-card>
+    <nb-card-header *ngIf="modoCreacion">
+      CREAR Usuario
+    </nb-card-header>
+    <nb-card-header *ngIf="!modoCreacion">
+      ACTUALIZAR Usuario
+    </nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-3">
+          <label>pseudonimo</label>
+        </div>
+        <div class="col-9">
+          <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elUsuario.cedula">
+          <p *ngIf="intentoEnvio && elUsuario.cedula==''
+">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <label>Nombre</label>
+        </div>
+        <div class="col-9">
+          <input class="form-control" type="text" [(ngModel)]="elUsuario.nombre">
+          <p *ngIf="intentoEnvio && elUsuario.nombre==''
+">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <label>Apellido</label>
+        </div>
+        <div class="col-9">
+          <input class="form-control" type="text" [(ngModel)]="elUsuario.apellido">
+          <p *ngIf="intentoEnvio && elUsuario.apellido==''
+">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <button *ngIf="modoCreacion" class="btn btn-primary btn-
+block" (click)="agregar()">
+
+          Crear
+        </button>
+        <button *ngIf="!modoCreacion" class="btn btn-primary btn-
+block" (click)="editar()">
+
+          Actualizar
+        </button>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
