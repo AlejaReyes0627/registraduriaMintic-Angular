@@ -1,22 +1,21 @@
-<div class="col-lg-12">
-  <nb-card>
+<nb-card>
+  <div class="col-lg-12 mt-3 mb-3 mr-3 ml-3">
     <nb-card-header>
       ADMINISTRACIÓN USUARIO
       <button type="button" class="btn btn-success" (click)="agregar()">
         <i class="fas fa-plus"></i>
       </button>
     </nb-card-header>
-    <table class="table">
+    <table class="mt-3">
       <tr>
         <th *ngFor="let columaActual of nombresColumnas">{{columaActual}}</th>
       </tr>
-      <ng-container *ngFor="let estudianteActual of usuario">
+      <ng-container *ngFor="let usuarioActual of usuario">
         <tr>
           <td>{{usuarioActual._id}}</td>
           <td>{{usuarioActual.pseudonimo}}</td>
           <td>{{usuarioActual.correo}} </td>
-          <td>{{usuarioActual.contrasena}} </td>
-          <td>{{usuarioActual.token}} </td>
+          <td class="contrasena">{{usuarioActual.contrasena}} </td>
           <td>
             <button type="button" class="btn btn-primary" (click)="editar(usuarioActual._id)">
               <i class="fas fa-pencil-alt"></i>
@@ -28,5 +27,6 @@
         </tr>
       </ng-container>
     </table>
-  </nb-card>
-</div>
+
+  </div>
+</nb-card>

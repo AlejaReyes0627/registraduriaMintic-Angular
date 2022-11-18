@@ -1,0 +1,17 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    
+    text-align: center;
+    //overflow-x:unset;
+    padding: 5px;
+    
+    align-items: center;
+    white-space: nowrap;
+  }
+  .contrasena{
+    overflow: scroll;
+  }

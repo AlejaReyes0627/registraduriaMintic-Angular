@@ -11,14 +11,12 @@ import { UsuarioService } from "../../../servicios/usuario.service";
 })
 export class CrearComponent implements OnInit {
   modoCreacion: boolean = true;
-  id_Usuario: string = "";
+  _id: string = "";
   intentoEnvio: boolean = false;
   elUsuario: Usuario = {
-    _id: "",
     pseudonimo: "",
     correo: "",
     contrasena: "",
-    token: "",
   };
   constructor(
     private miServicioUsuarios: UsuarioService,
@@ -26,10 +24,10 @@ export class CrearComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    if (this.rutaActiva.snapshot.params.id_Usuario) {
+    if (this.rutaActiva.snapshot.params.user_id) {
       this.modoCreacion = false;
-      this.id_Usuario = this.rutaActiva.snapshot.params.id_Usuario;
-      this.getUsuario(this.id_Usuario);
+      this._id = this.rutaActiva.snapshot.params.user_id;
+      this.getUsuario(this._id);
     } else {
       this.modoCreacion = true;
     }
@@ -37,12 +35,15 @@ export class CrearComponent implements OnInit {
   getUsuario(id: string) {
     this.miServicioUsuarios.getUsuario(id).subscribe((data) => {
       this.elUsuario = data;
+      console.log(this.elUsuario)
     });
   }
   agregar(): void {
+    console.log(this.validarDatosCompletos())
     if (this.validarDatosCompletos()) {
       this.intentoEnvio = true;
       this.miServicioUsuarios.crear(this.elUsuario).subscribe((data) => {
+        console.log(data)
         Swal.fire(
           "Creado",
           "El Usuario ha sido creado correctamente",
@@ -69,11 +70,9 @@ export class CrearComponent implements OnInit {
   validarDatosCompletos(): boolean {
     this.intentoEnvio = true;
     if (
-      this.elUsuario._id == "" ||
       this.elUsuario.pseudonimo == "" ||
       this.elUsuario.correo == "" ||
-      this.elUsuario.contrasena == "" ||
-      this.elUsuario.token == ""
+      this.elUsuario.contrasena == "" 
     ) {
       return false;
     } else {

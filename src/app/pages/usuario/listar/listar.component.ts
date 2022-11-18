@@ -16,7 +16,6 @@ export class ListarComponent implements OnInit {
     "pseudonimo",
     "correo",
     "contrasena",
-    "token",
   ];
   constructor(
     private miServicioUsuario: UsuarioService,
@@ -29,13 +28,14 @@ export class ListarComponent implements OnInit {
   listar(): void {
     this.miServicioUsuario.listar().subscribe((data) => {
       this.usuario = data;
+      console.log(this.usuario)
     });
   }
   agregar(): void {
     this.router.navigate(["pages/usuario/crear"]);
   }
   editar(id: string): void {
-    this.router.navigate(["pages/usuario/actualizar" + id]);
+    this.router.navigate(["pages/usuario/actualizar/" + id]);
   }
   eliminar(id: string): void {
     Swal.fire({

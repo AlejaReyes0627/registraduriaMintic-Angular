@@ -10,18 +10,18 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   listar(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`http://127.0.0.1:9090/usuario`);
+    return this.http.get<Usuario[]>(`http://127.0.0.1:7777/usuarios`);
   }
   eliminar(id: string) {
-    return this.http.delete<Usuario>(`http://127.0.0.1:9090/usuario/${id}`);
+    return this.http.delete<Usuario>(`http://127.0.0.1:7777/usuarios/${id}`);
   }
   getUsuario(id: string): Observable<Usuario> {
-    return this.http.get<Usuario>(`http://127.0.0.1:9090/usuario/${id}`);
+    return this.http.get<Usuario>(`http://127.0.0.1:7777/usuarios/${id}`);
   }
   crear(elUsuario: Usuario) {
-    return this.http.post(`http://127.0.0.1:9090/usuario/`, elUsuario);
+    return this.http.post('http://127.0.0.1:7777/usuarios', elUsuario);
   }
   editar(id: string, elUsuario: Usuario) {
-    return this.http.put(`http://127.0.0.1:9090/usuario/${id}`, elUsuario);
+    return this.http.put(`http://127.0.0.1:7777/usuarios/${id}`, elUsuario);
   }
 }
