@@ -1,8 +1,8 @@
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import Swal from "sweetalert2";
-import { Usuario } from "../../../modelos/usuario.model";
 import { UsuarioService } from "../../../servicios/usuario.service";
+import { Candidatos } from "../../../modelos/candidatos.model";
 
 @Component({
   selector: "ngx-listar",
@@ -10,12 +10,15 @@ import { UsuarioService } from "../../../servicios/usuario.service";
   styleUrls: ["./listar.component.scss"],
 })
 export class ListarComponent implements OnInit {
-  usuario: Usuario[];
+  usuario: Candidatos[];
   nombresColumnas: string[] = [
     "_id",
-    "pseudonimo",
-    "correo",
-    "contrasena",
+    "cedula",
+    "nombre",
+    "apellido",
+    "numero_resolucion",
+    "partido",
+
   ];
   constructor(
     private miServicioUsuario: UsuarioService,

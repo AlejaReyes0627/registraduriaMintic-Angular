@@ -13,9 +13,11 @@
       <ng-container *ngFor="let usuarioActual of usuario">
         <tr>
           <td>{{usuarioActual._id}}</td>
-          <td>{{usuarioActual.pseudonimo}}</td>
-          <td>{{usuarioActual.correo}} </td>
-          <td class="contrasena">{{usuarioActual.contrasena}} </td>
+          <td>{{usuarioActual.cedula}}</td>
+          <td>{{usuarioActual.nombre}} </td>
+          <td>{{usuarioActual.apellido}} </td>
+          <td>{{usuarioActual.numero_resolucion}} </td>
+          <td>{{usuarioActual.partido.nombre}} </td>
           <td>
             <button type="button" class="btn btn-primary" (click)="editar(usuarioActual._id)">
               <i class="fas fa-pencil-alt"></i>
