@@ -5,6 +5,7 @@ import { FormsModule} from '@angular/forms';
 import { UsuarioRoutingModule } from './usuario-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
+import { NbSelectModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CrearComponent } from './crear/crear.component';
   imports: [
     CommonModule,
     FormsModule,
+    NbSelectModule,
     UsuarioRoutingModule,
     NbCardModule
   ]

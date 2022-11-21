@@ -1,8 +1,8 @@
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import Swal from "sweetalert2";
-import { UsuarioService } from "../../../servicios/usuario.service";
 import { Candidatos } from "../../../modelos/candidatos.model";
+import { CandidatosService } from "../../../servicios/candidato.service";
 
 @Component({
   selector: "ngx-listar",
@@ -17,11 +17,10 @@ export class ListarComponent implements OnInit {
     "nombre",
     "apellido",
     "numero_resolucion",
-    "partido",
-
+    "partido_candidato"
   ];
   constructor(
-    private miServicioUsuario: UsuarioService,
+    private miServicioUsuario: CandidatosService,
     private router: Router
   ) {}
 
@@ -31,7 +30,6 @@ export class ListarComponent implements OnInit {
   listar(): void {
     this.miServicioUsuario.listar().subscribe((data) => {
       this.usuario = data;
-      console.log(this.usuario)
     });
   }
   agregar(): void {

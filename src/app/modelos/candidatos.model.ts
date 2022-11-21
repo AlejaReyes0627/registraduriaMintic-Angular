@@ -4,6 +4,5 @@ export class Candidatos {
   nombre?: string;
   apellido?: string;
   numero_resolucion?: Number;
-  partido?:string;
   token?: string;
 }

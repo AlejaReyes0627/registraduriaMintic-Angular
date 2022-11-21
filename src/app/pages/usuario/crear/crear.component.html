@@ -51,6 +51,19 @@
       </div>
       <br>
       <div class="row">
+        <div class="col-3">
+          <label>partido al que pertenece</label>
+        </div>
+        <div class="col-9">
+              <nb-select [(ngModel)]="partidoSeleccionado" status="primary" >
+                <nb-option *ngFor="let item of partidos; index as i" [value]="item._id">{{item.nombre}}</nb-option>
+              </nb-select>
+          <p *ngIf="intentoEnvio && partidoSeleccionado==[]
+">Requerido</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
         <button *ngIf="modoCreacion" class="btn btn-primary btn-
 block" (click)="agregar()">
 
