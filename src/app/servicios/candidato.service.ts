@@ -25,6 +25,6 @@ export class CandidatosService {
     return this.http.put(`http://127.0.0.1:7777/candidatos/${id}`, elCandidatos);
   }
   asignar(id:string,id_partidos:string){
-    return this.http.put(`http://127.0.0.1:7777/candidatos/${id}/partidos/${id_partidos}`,"vacios");
+    return this.http.put(`http://127.0.0.1:7777/candidatos/${id}/partidos/${id_partidos}`,"");
   }
 }

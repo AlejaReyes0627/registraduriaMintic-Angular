@@ -13,9 +13,9 @@ import { CandidatosService } from "../../../servicios/candidato.service";
 })
 export class CrearComponent implements OnInit {
   modoCreacion: boolean = true;
-  partidos: Partidos[];
+  //partidos: Partidos[];
   _id: string = "";
-  partidoSeleccionado: string = "";
+  //partidoSeleccionado: string = "";
   intentoEnvio: boolean = false;
   elCandidato: Candidatos = {
     cedula: "",
@@ -30,7 +30,7 @@ export class CrearComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.listarPartidos();
+    //this.listarPartidos();
     if (this.rutaActiva.snapshot.params._id) {
       this.modoCreacion = false;
       this._id = this.rutaActiva.snapshot.params._id;
@@ -39,29 +39,20 @@ export class CrearComponent implements OnInit {
       this.modoCreacion = true;
     }
   }
-  listarPartidos() {
+  /*listarPartidos() {
     this.miServicioPartidos.listar().subscribe((data) => {
       this.partidos = data;
     });
-  }
+  }*/
   getUsuario(id: string) {
     this.miServicioUsuarios.getCandidatos(id).subscribe((data) => {
       this.elCandidato = data;
     });
   }
   agregar(): void {
-    console.log(this.partidoSeleccionado);
     if (this.validarDatosCompletos()) {
       this.intentoEnvio = true;
       this.miServicioUsuarios.crear(this.elCandidato).subscribe((data) => {
-        let result = data;
-        console.log(result);
-        let claves = Object.keys(result);
-        console.log(result[claves[0]])
-          this.miServicioUsuarios.asignar(result[claves[0]],this.partidoSeleccionado).subscribe(data=>{
-            console.log(data)
-          })
-          setTimeout(function(){
             Swal.fire(
               "Creado",
               "El Usuario ha sido creado correctamente",
@@ -69,7 +60,6 @@ export class CrearComponent implements OnInit {
             );
     
             this.router.navigate(["pages/usuario/listar"]);
-        }, 2000);
 
         
       });
@@ -77,12 +67,14 @@ export class CrearComponent implements OnInit {
   }
   editar(): void {
     this.intentoEnvio = true;
-    console.log("hola");
-    console.log(this.validarDatosCompletos);
     if (this.validarDatosCompletos()) {
+        //console.log(this.partidoSeleccionado)
       this.miServicioUsuarios
         .editar(this.elCandidato._id, this.elCandidato)
         .subscribe((data) => {
+          /*this.miServicioUsuarios.asignar(this._id,this.partidoSeleccionado).subscribe(data=>{
+            console.log(data)
+          })*/
           Swal.fire(
             "Actualizado",
             "El Usuario ha sido actualizado correctamente",

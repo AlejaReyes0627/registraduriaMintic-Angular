@@ -49,8 +49,8 @@
 ">Requerido</p>
         </div>
       </div>
-      <br>
-      <div class="row">
+      <!--<br>
+      <div class="row" *ngIf="!modoCreacion">
         <div class="col-3">
           <label>partido al que pertenece</label>
         </div>
@@ -61,7 +61,7 @@
           <p *ngIf="intentoEnvio && partidoSeleccionado==[]
 ">Requerido</p>
         </div>
-      </div>
+      </div>-->
       <br>
       <div class="row">
         <button *ngIf="modoCreacion" class="btn btn-primary btn-

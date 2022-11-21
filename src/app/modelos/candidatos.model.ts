@@ -1,3 +1,5 @@
+import { Partidos } from "./partidos.model";
+
 export class Candidatos {
   _id?: string;
   cedula?: string;

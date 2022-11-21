@@ -17,7 +17,7 @@ export class ListarComponent implements OnInit {
     "nombre",
     "apellido",
     "numero_resolucion",
-    "partido_candidato"
+    //"partido_candidato"
   ];
   constructor(
     private miServicioUsuario: CandidatosService,
