@@ -20,8 +20,7 @@ import { FormsModule} from '@angular/forms';
     MiscellaneousModule,
   ],
   declarations: [
-    PagesComponent,
-    
+    PagesComponent,    
   ],
 })
 export class PagesModule {

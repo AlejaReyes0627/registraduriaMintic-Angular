@@ -20,5 +20,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/usuario/listar',
       }
     ],
+  },
+  {
+    title: 'Partidos',
+    icon: 'pie-chart-outline',
+    children: [
+      {
+        title: 'CrearPartido',
+        link: '/pages/partidos/crear',
+      },
+      {
+        title: 'ListarPartidos',
+        link: '/pages/partidos/listar',
+      }
+    ],
   }
 ];
