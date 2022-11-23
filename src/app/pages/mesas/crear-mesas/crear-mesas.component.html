@@ -1,0 +1,40 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+            CREAR Mesa
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+            ACTUALIZAR Mesa
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                  <label>numero mesa</label>
+                </div>
+                <div class="col-9">
+                  <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elMesa.numero_mesa">
+                  <p *ngIf="intentoEnvio && elMesa.numero_mesa==''">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                  <label>cantidad_inscritos</label>
+                </div>
+                <div class="col-9">
+                  <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elMesa.cantidad_inscritos">
+                  <p *ngIf="intentoEnvio && elMesa.cantidad_inscritos==''">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregarMesa()">
+                    Crear
+                </button>
+                <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editarMesa()">
+                    Actualizar
+                </button>
+            </div>
+        </nb-card-body>
+    </nb-card> 
+</div>
