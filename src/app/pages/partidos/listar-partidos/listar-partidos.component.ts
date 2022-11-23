@@ -12,9 +12,9 @@ import { PartidosService } from "../../../servicios/partidos.service";
 export class ListarPartidosComponent implements OnInit {
   partido: Partidos[];
   nombresColumnas: string[] = [
-    "_id",
-    "nombre",
-    "lema",
+    "ID",
+    "NOMBRE",
+    "LEMA",
     ];
   constructor(
     private miServicioPartido: PartidosService,

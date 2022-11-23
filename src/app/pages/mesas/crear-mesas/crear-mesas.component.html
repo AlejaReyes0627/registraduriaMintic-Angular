@@ -12,7 +12,7 @@
                   <label>numero mesa</label>
                 </div>
                 <div class="col-9">
-                  <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elMesa.numero_mesa">
+                  <input class="form-control" type="text"  [(ngModel)]="elMesa.numero_mesa">
                   <p *ngIf="intentoEnvio && elMesa.numero_mesa==''">Requerido</p>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                   <label>cantidad_inscritos</label>
                 </div>
                 <div class="col-9">
-                  <input class="form-control" type="text" [disabled]="!modoCreacion" [(ngModel)]="elMesa.cantidad_inscritos">
+                  <input class="form-control" type="text"  [(ngModel)]="elMesa.cantidad_inscritos">
                   <p *ngIf="intentoEnvio && elMesa.cantidad_inscritos==''">Requerido</p>
                 </div>
             </div>

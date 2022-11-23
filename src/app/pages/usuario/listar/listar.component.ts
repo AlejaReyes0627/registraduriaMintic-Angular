@@ -12,11 +12,11 @@ import { CandidatosService } from "../../../servicios/candidato.service";
 export class ListarComponent implements OnInit {
   usuario: Candidatos[];
   nombresColumnas: string[] = [
-    "_id",
-    "cedula",
-    "nombre",
-    "apellido",
-    "numero_resolucion",
+    "ID",
+    "CEDULA",
+    "NOMBRE",
+    "APELLIDO",
+    "NUMERO RESOLUCION",
     //"partido_candidato"
   ];
   constructor(
