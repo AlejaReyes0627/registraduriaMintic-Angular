@@ -1,5 +1,5 @@
 export class Mesas {
-    _id?: string;
+  _id?: string;
   numero_mesa?: string;
   cantidad_inscritos?: string;
 }

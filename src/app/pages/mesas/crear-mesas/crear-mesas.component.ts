@@ -24,10 +24,10 @@ export class CrearMesasComponent implements OnInit {
    }
 
   ngOnInit(): void {
-     //this.listarPartidos();
      if (this.rutaActiva.snapshot.params._id) {
       this.modoCreacion = false;
       this._id = this.rutaActiva.snapshot.params._id;
+      console.log(this._id)
       this.getMesas(this._id);
     } else {
       this.modoCreacion = true;
@@ -61,6 +61,25 @@ export class CrearMesasComponent implements OnInit {
       return false;
     } else {
       return true;
+    }
+  }
+  editar(): void {
+    this.intentoEnvio = true;
+    if (this.validarDatosCompletos()) {
+        //console.log(this.partidoSeleccionado)
+      this.miServicioMesas
+        .editar(this.elMesa._id, this.elMesa)
+        .subscribe((data) => {
+          /*this.miServicioUsuarios.asignar(this._id,this.partidoSeleccionado).subscribe(data=>{
+            console.log(data)
+          })*/
+          Swal.fire(
+            "Actualizado",
+            "La Mesa ha sido actualizado correctamente",
+            "success"
+          );
+          this.router.navigate(["pages/mesas/listar"]);
+        });
     }
   }
 }
