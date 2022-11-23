@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     };
     console.log(elUsuario)
     this.miServicioSeguridad.login(elUsuario).subscribe((data) => {
-        this.router.navigate(["pages/dashboard"]);
+        this.router.navigate(["pages/homepage"]);
         this.miServicioSeguridad.guardarDatosSesion(data);
       },
       (error) => {
