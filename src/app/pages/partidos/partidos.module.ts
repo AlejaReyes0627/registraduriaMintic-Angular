@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PartidosRoutingModule } from './partidos-routing.module';
-import { CrearPartidosComponent } from './crear-partidos/crear-partidos.component';
+import { CrearComponent } from './crear-partidos/crear-partidos.component';
 import { ListarPartidosComponent } from './listar-partidos/listar-partidos.component';
 
 import { FormsModule} from '@angular/forms';
@@ -12,7 +12,7 @@ import { NbSelectModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
-    CrearPartidosComponent,
+    CrearComponent,
     ListarPartidosComponent
   ],
   imports: [

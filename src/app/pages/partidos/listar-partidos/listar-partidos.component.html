@@ -1,1 +1,31 @@
-<p>listar-partidos works!</p>
+<nb-card>
+    <div class="col-lg-12 mt-3 mb-3 mr-3 ml-3">
+      <nb-card-header>
+        ADMINISTRACIÓN PARTIDO
+        <button type="button" class="btn btn-success" (click)="agregar()">
+          <i class="fas fa-plus"></i>
+        </button>
+      </nb-card-header>
+      <table class="mt-3">
+        <tr>
+          <th *ngFor="let columaActual of nombresColumnas">{{columaActual}}</th>
+        </tr>
+        <ng-container *ngFor="let partidoActual of partido">
+          <tr>
+            <td>{{partidoActual._id}}</td>
+            <td>{{partidoActual.nombre}}</td>
+            <td>{{partidoActual.lema}} </td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="editar(partidoActual._id)">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+              <button type="button" class="btn btn-danger" (click)="eliminar(partidoActual._id)">
+                <i class="fas fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </table>
+  
+    </div>
+  </nb-card>

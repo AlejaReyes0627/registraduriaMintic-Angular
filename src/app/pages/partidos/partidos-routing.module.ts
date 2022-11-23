@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CrearPartidosComponent } from './crear-partidos/crear-partidos.component';
+import { CrearComponent } from './crear-partidos/crear-partidos.component';
 import { ListarPartidosComponent } from './listar-partidos/listar-partidos.component';
 
 const routes: Routes = [{
@@ -9,11 +9,11 @@ const routes: Routes = [{
 },
 {
   path: 'crear',
-  component: CrearPartidosComponent
+  component: CrearComponent
 },
 {
   path: 'actualizar/:_id',
-  component: CrearPartidosComponent
+  component: CrearComponent
 }];
 
 @NgModule({
